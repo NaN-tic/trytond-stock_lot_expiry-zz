@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!-- The COPYRIGHT file at the top level of this repository contains the full
+     copyright notices and license terms. -->
+<data>
+    <xpath expr="/form/field[@name='type']" position="after">
+        <group id="expiry_fields" colspan="2" col="2">
+            <label name="expired"/>
+            <field name="expired"/>
+            <label name="allow_expired"/>
+            <field name="allow_expired"/>
+        </group>
+    </xpath>
+</data>

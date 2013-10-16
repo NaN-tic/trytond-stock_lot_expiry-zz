@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!-- The COPYRIGHT file at the top level of this repository contains the full
+     copyright notices and license terms. -->
+<data>
+    <xpath expr="/form/field[@name='description']" position="after">
+        <group id="expiry_times" colspan="4" col="8">
+            <label name="life_time"/>
+            <field name="life_time"/>
+            <label name="expiry_time"/>
+            <field name="expiry_time"/>
+            <label name="removal_time"/>
+            <field name="removal_time"/>
+            <label name="alert_time"/>
+            <field name="alert_time"/>
+        </group>
+    </xpath>
+</data>
