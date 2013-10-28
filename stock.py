@@ -7,12 +7,12 @@ from trytond.pool import Pool, PoolMeta
 from trytond.pyson import And, Bool, Equal, Eval, If, Not
 from trytond.transaction import Transaction
 
-__all__ = ['Product', 'Lot', 'Location', 'Move']
+__all__ = ['Template', 'Lot', 'Location', 'Move']
 __metaclass__ = PoolMeta
 
 
-class Product:
-    __name__ = 'product.product'
+class Template:
+    __name__ = 'product.template'
 
     life_time = fields.Integer('Life Time',
         help='The number of days before a lot may become dangerous and should '
@@ -80,7 +80,7 @@ class Lot:
         for fname in ('life_date', 'expiry_date', 'removal_date',
                 'alert_date'):
             product_field = fname.replace('date', 'time')
-            margin = getattr(self.product, product_field)
+            margin = getattr(self.product.template, product_field)
             result[fname] = (margin
                 and date.today() + timedelta(days=margin))
         return result

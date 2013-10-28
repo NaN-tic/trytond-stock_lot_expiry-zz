@@ -7,7 +7,7 @@ from .stock import *
 
 def register():
     Pool.register(
-        Product,
+        Template,
         Lot,
         Location,
         Move,

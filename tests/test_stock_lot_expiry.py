@@ -63,12 +63,12 @@ class TestCase(unittest.TestCase):
                         'cost_price': Decimal(0),
                         'cost_price_method': 'fixed',
                         'default_uom': unit.id,
-                        }])
-            product, = self.product.create([{
-                        'template': template.id,
                         'life_time': 20,
                         'expiry_time': 10,
                         'alert_time': 5,
+                        }])
+            product, = self.product.create([{
+                        'template': template.id,
                         }])
             lot, lot2, = self.lot.create([{
                         'number': '001',
@@ -116,12 +116,12 @@ class TestCase(unittest.TestCase):
                         'cost_price': Decimal(0),
                         'cost_price_method': 'fixed',
                         'default_uom': unit.id,
-                        }])
-            product, = self.product.create([{
-                        'template': template.id,
                         'life_time': 20,
                         'expiry_time': 10,
                         'alert_time': 5,
+                        }])
+            product, = self.product.create([{
+                        'template': template.id,
                         }])
             lot, lot2, = self.lot.create([{
                         'number': '001',
