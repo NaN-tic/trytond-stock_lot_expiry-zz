@@ -1,5 +1,5 @@
-Control lotes y caducidad
-=========================
+Control lotes y fechas de expiración
+====================================
 
 El módulo stock lot expiry le permite añadir fechas (fin de vida,
 caducidad, renovación y de alerta) en los lotes.
