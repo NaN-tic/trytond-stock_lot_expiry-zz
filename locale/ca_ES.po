@@ -1,0 +1,130 @@
+# 
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "error:stock.lot:"
+msgid "Expired"
+msgstr "Caducat"
+
+msgctxt "error:stock.move:"
+msgid ""
+"You are trying to do the Stock Move \"%(move)s\" but its Lot \"%(lot)s\" is "
+"expired and the Destination Location \"%(to_location)s\" doesn't accept "
+"expired lots."
+msgstr ""
+"Està intentant realitzar el moviment d'estoc \"%(move)s\" però el seu lot "
+"\"%(lot)s\" està caducat i la ubicació de destí \"%(to_location)s\" no "
+"accepta lots caducats."
+
+msgctxt "field:product.template,alert_time:"
+msgid "Alert Time"
+msgstr "Marge alerta"
+
+msgctxt "field:product.template,expiry_time:"
+msgid "Expiry Time"
+msgstr "Marge caducitat"
+
+msgctxt "field:product.template,life_time:"
+msgid "Life Time"
+msgstr "Marge vida"
+
+msgctxt "field:product.template,removal_time:"
+msgid "Removal Time"
+msgstr "Marge eliminació"
+
+msgctxt "field:stock.location,allow_expired:"
+msgid "Allow Expired"
+msgstr "Permet caducats"
+
+msgctxt "field:stock.location,expired:"
+msgid "Expired Products' Location"
+msgstr "Ubicació productes caducats"
+
+msgctxt "field:stock.lot,alert_date:"
+msgid "Alert Date"
+msgstr "Data alerta"
+
+msgctxt "field:stock.lot,expired:"
+msgid "Expired"
+msgstr "Caducat"
+
+msgctxt "field:stock.lot,expiry_date:"
+msgid "Expiry Date"
+msgstr "Data caducitat"
+
+msgctxt "field:stock.lot,life_date:"
+msgid "End of Life Date"
+msgstr "Data fi de vida"
+
+msgctxt "field:stock.lot,removal_date:"
+msgid "Removal Date"
+msgstr "Data eliminació"
+
+msgctxt "field:stock.move,to_location_allow_expired:"
+msgid "Destination Allow Expired"
+msgstr "El destí permet caducats"
+
+msgctxt "help:product.template,alert_time:"
+msgid ""
+"The number of days after which an alert should be notified about the lot."
+msgstr ""
+"El número de dies fins que s'hagi de mostrar una alerta avisant de la "
+"caducitat del lot."
+
+msgctxt "help:product.template,expiry_time:"
+msgid ""
+"The number of days before a lot starts deteriorating without becoming "
+"dangerous."
+msgstr ""
+"El número de dies abans que un lot comenci a deteriorar-se sense arribar a "
+"ser perillós."
+
+msgctxt "help:product.template,life_time:"
+msgid ""
+"The number of days before a lot may become dangerous and should not be "
+"consumed."
+msgstr ""
+"El número de dies abans que un lot comenci a ser perillós i no s'hauria de "
+"consumir."
+
+msgctxt "help:product.template,removal_time:"
+msgid "The number of days before a lot should be removed."
+msgstr "El número de dies abans que un lot s'hagi d'eliminar."
+
+msgctxt "help:stock.location,allow_expired:"
+msgid "Check this option to allow move expired lots to this location."
+msgstr ""
+"Marqui aquesta opció per permetre moure lots caducats cap aquesta ubicació."
+
+msgctxt "help:stock.location,expired:"
+msgid ""
+"This option identifies this location as a container for expired products (provably it is a temporal location until the product is returned or removed).\n"
+"Take care that if you set this location as a child of the Storage location of a Warehouse, the products in this location will be computed as available stock."
+msgstr ""
+"Aquesta marca identifica aquesta ubicació com un contenidor de productes "
+"caducats (provablement és una ubicació temporal fins que el producte és "
+"retornat o eliminat)."
+
+msgctxt "help:stock.lot,alert_date:"
+msgid "The date on which an alert should be notified about the lot."
+msgstr "La data en que s'hauria de mostrar un avís respecte el lot."
+
+msgctxt "help:stock.lot,expiry_date:"
+msgid ""
+"The date on which the lot starts deteriorating without becoming dangerous."
+msgstr ""
+"La data en que el lot comença a deteriorar-se sense arribar a ser perillós."
+
+msgctxt "help:stock.lot,life_date:"
+msgid ""
+"The date on which the lot may become dangerous and should not be consumed."
+msgstr ""
+"La data en que el lot comença a ser perillós i no s'hauria de consumir."
+
+msgctxt "help:stock.lot,removal_date:"
+msgid "The date on which the lot should be removed."
+msgstr "La data en que el lot s'ha d'eliminar."
+
+msgctxt "view:product.template:"
+msgid "Expiry Times"
+msgstr "Marges caducitat"
