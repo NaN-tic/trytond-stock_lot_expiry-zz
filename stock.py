@@ -162,10 +162,14 @@ class Location:
         return super(Location, cls).create(vlist)
 
     @classmethod
-    def write(cls, locations, vals):
-        if vals.get('expired'):
-            vals['allow_expired'] = True
-        super(Location, cls).write(locations, vals)
+    def write(cls, *args):
+        actions = iter(args)
+        args = []
+        for locations, values in zip(actions, actions):
+            if values.get('expired'):
+                values['allow_expired'] = True
+            args.extend((locations, values))
+        super(Location, cls).write(*args)
 
 
 class Move:
