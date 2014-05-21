@@ -100,7 +100,8 @@ class TestCase(unittest.TestCase):
         Test Lot check_allow_expired.
         '''
         with Transaction().start(DB_NAME, USER, context=CONTEXT):
-            company, = self.company.search([('party.name', '=', 'B2CK')])
+            company, = self.company.search([
+                    ('party.name', '=', 'Dunder Mifflin')])
             currency = company.currency
             self.user.write([self.user(USER)], {
                 'main_company': company.id,
