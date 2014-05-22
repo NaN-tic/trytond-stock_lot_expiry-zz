@@ -47,11 +47,11 @@ class Lot:
     def __setup__(cls):
         super(Lot, cls).__setup__()
         if not cls.product.on_change:
-            cls.product.on_change = []
+            cls.product.on_change = set()
         if 'product' not in cls.product.on_change:
-            cls.product.on_change.append('product')
-        cls.product.on_change += ['life_date', 'expiry_date', 'removal_date',
-            'alert_date']
+            cls.product.on_change.add('product')
+        cls.product.on_change |= set(['life_date', 'expiry_date',
+            'removal_date', 'alert_date'])
         if not cls.product.depends:
             cls.product.depends = []
         if 'product' not in cls.product.depends:
@@ -135,7 +135,6 @@ class Location:
     __name__ = 'stock.location'
 
     expired = fields.Boolean('Expired Products\' Location',
-        on_change=['expired', 'allow_expired'],
         help='This option identifies this location as a container for expired '
         'products (provably it is a temporal location until the product is '
         'returned or removed).\n'
@@ -147,6 +146,7 @@ class Location:
             }, depends=['expired'],
         help='Check this option to allow move expired lots to this location.')
 
+    @fields.depends('expired', 'allow_expired')
     def on_change_expired(self):
         if self.expired:
             return {
@@ -176,8 +176,7 @@ class Move:
     __name__ = 'stock.move'
 
     to_location_allow_expired = fields.Function(
-        fields.Boolean('Destination Allow Expired',
-            on_change_with=['to_location']),
+        fields.Boolean('Destination Allow Expired'),
         'on_change_with_to_location_allow_expired')
 
     @classmethod
@@ -206,6 +205,7 @@ class Move:
                 'expired lots.',
             })
 
+    @fields.depends('to_location')
     def on_change_with_to_location_allow_expired(self, name=None):
         return self.to_location and self.to_location.allow_expired or False
 
