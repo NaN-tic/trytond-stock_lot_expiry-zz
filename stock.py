@@ -46,18 +46,6 @@ class Lot:
     @classmethod
     def __setup__(cls):
         super(Lot, cls).__setup__()
-        if not cls.product.on_change:
-            cls.product.on_change = set()
-        if 'product' not in cls.product.on_change:
-            cls.product.on_change.add('product')
-        cls.product.on_change |= set(['life_date', 'expiry_date',
-            'removal_date', 'alert_date'])
-        if not cls.product.depends:
-            cls.product.depends = []
-        if 'product' not in cls.product.depends:
-            cls.product.depends.append('product')
-        cls.product.depends += ['life_date', 'expiry_date', 'removal_date',
-            'alert_date']
         cls._error_messages.update({
                 'Expired': 'Expired',
                 })
@@ -68,6 +56,8 @@ class Lot:
             rec_name += ' (%s)' % self._error_messages['Expired']
         return rec_name
 
+    @fields.depends('product', 'life_date', 'expiry_date', 'removal_date',
+        'alert_date')
     def on_change_product(self):
         try:
             result = super(Lot, self).on_change_product()
