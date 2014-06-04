@@ -104,7 +104,7 @@ class Lot:
             date = context['stock_move_date']
         elif context.get('stock_date_end'):
             date = context['stock_date_end']
-        unused, op, operand = domain
+        _, op, operand = domain
         search_expired = (op == '=' and operand
             or op == '!=' and not operand)
         if search_expired:
@@ -189,10 +189,10 @@ class Move:
             if fname not in cls.lot.depends:
                 cls.lot.depends.append(fname)
         cls._error_messages.update({
-            'expired_lot_invalid_destination': 'You are trying to do the '
+            'expired_lot_invalid_destination': ('You are trying to do the '
                 'Stock Move "%(move)s" but its Lot "%(lot)s" is expired and '
                 'the Destination Location "%(to_location)s" doesn\'t accept '
-                'expired lots.',
+                'expired lots.'),
             })
 
     @fields.depends('to_location')
