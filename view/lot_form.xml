@@ -4,7 +4,7 @@
 <data>
     <xpath expr="/form/field[@name='product']" position="after">
         <group id="expiry_fields" colspan="4" col="8">
-            <label name="removal_date"/>
+            <label name="life_date"/>
             <field name="life_date"/>
             <label name="expiry_date"/>
             <field name="expiry_date"/>
