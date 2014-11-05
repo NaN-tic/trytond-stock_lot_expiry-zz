@@ -13,9 +13,7 @@ from trytond.transaction import Transaction
 
 
 class TestCase(unittest.TestCase):
-    '''
-    Test module.
-    '''
+    'Test module'
 
     def setUp(self):
         trytond.tests.test_tryton.install_module('stock_lot_expiry')
@@ -29,21 +27,15 @@ class TestCase(unittest.TestCase):
         self.user = POOL.get('res.user')
 
     def test0005views(self):
-        '''
-        Test views.
-        '''
+        'Test views'
         test_view('stock_lot_expiry')
 
     def test0006depends(self):
-        '''
-        Test depends.
-        '''
+        'Test depends'
         test_depends()
 
     def test0010_lot_on_change_product_and_expired(self):
-        '''
-        Test Lot.on_change_product() and Lot.expired.
-        '''
+        'Test Lot.on_change_product() and Lot.expired'
         with Transaction().start(DB_NAME, USER,
                 context=CONTEXT) as transaction:
             unit, = self.uom.search([('name', '=', 'Unit')])
