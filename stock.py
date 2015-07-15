@@ -53,7 +53,8 @@ class Lot:
     def get_rec_name(self, name):
         rec_name = super(Lot, self).get_rec_name(name)
         if self.expired:
-            rec_name += ' (%s)' % self._error_messages['Expired']
+            rec_name += ' (%s)' % self.raise_user_error('Expired',
+                raise_exception=False)
         return rec_name
 
     @fields.depends('product', 'life_date', 'expiry_date', 'removal_date',
