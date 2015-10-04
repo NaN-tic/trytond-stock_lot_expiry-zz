@@ -181,6 +181,9 @@ class Move:
             Bool(Eval('effective_date', False)),
             Eval('effective_date'),
             Eval('planned_date'))
+
+        cls.lot.loading = 'lazy'
+        
         for fname in ('state', 'to_location_allow_expired', 'effective_date',
                 'planned_date'):
             if fname not in cls.lot.depends:
